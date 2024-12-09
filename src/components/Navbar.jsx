@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './navbar.css';  // Import the external CSS file
+import './Navbar.css';  // Import the external CSS file
 import { Link } from 'react-scroll';  // Import Link component from react-scroll
 import { FaTwitter, FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa'; // Import social media icons
 
