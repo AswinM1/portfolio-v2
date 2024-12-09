@@ -1,0 +1,64 @@
+.results {
+    padding: 20px;
+    text-align: center;
+    background-color: #111;
+    color: white;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .results h1 {
+    font-size: 80px;
+    margin-bottom: 20px;
+    font-family: sans-serif ;
+    font-weight: bold;
+    margin-top: 100px;
+     letter-spacing:-5px;
+     color: #0aff9d;
+  }
+  
+  .results p {
+    font-size: 30px;
+    margin-bottom: 100px;
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+    font-family: sans-serif;
+  }
+  
+  .socials-container {
+    display: flex;
+    justify-content: center; /* Align items in the center horizontally */
+    gap: 20px; /* Space between items */
+    flex-direction: row; /* Ensures the items are in a row (this is default, but you can set it explicitly) */
+  }
+  
+  .socials-container a {
+    color: white;
+    transition: transform 0.3s ease;
+  }
+  
+  .socials-container a:hover {
+    transform: scale(1.1);
+  }
+  
+  .button-container {
+    margin-top: 30px;
+  }
+  
+  .send-email-btn {
+    padding: 10px 20px;
+    font-size: 1rem;
+    background-color: #0aff9d;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 100px;
+  }
+  
+  .send-email-btn:hover {
+    background-color: #07c7b2;
+   
+  }
+  

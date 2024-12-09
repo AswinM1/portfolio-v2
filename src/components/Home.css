@@ -1,0 +1,111 @@
+/* Container for the entire section */
+.hello {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center; /* Vertically center the content */
+    align-items: center; /* Horizontally center the content */
+    height: 100vh; /* Full height of the viewport */
+    max-width: 1200px;
+    padding: 20px;
+    background-color: #111;
+  cursor: pointer;
+    align-self: center;
+    margin: 0 auto; /* Add padding for spacing */
+   
+    color: white; /* Default text color */
+  }
+  
+  /* Wrapper to contain all the content */
+  .content-wrapper {
+    text-align: center; /* Center text inside the wrapper */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+    max-width: 1200px; /* Limit maximum width for professional look */
+    padding: 20px; /* Add spacing around the content */
+  }
+  
+  /* Styling for the main text */
+  .text p {
+    font-family: 'Poppins', sans-serif; /* Use Poppins for consistency */
+    
+    font-size: 72px; /* Adjust font size for better readability */
+    font-weight: bold;
+    line-height: 80px;
+    letter-spacing: -2px; /* Improved spacing for clarity */
+    margin-bottom: 20px;
+    margin-top: 0;
+    
+    opacity: 100%;
+  }
+  
+  /* Button container styling */
+  
+  
+  /* Responsive styles for tablets */
+  @media (max-width: 768px) {
+    .text p {
+      font-size: 50px; /* Adjust font size for tablets */
+      line-height: 60px;
+      letter-spacing: -1px;
+    }
+  
+    .button button {
+      width: 160px; /* Adjust button width */
+      font-size: 16px; /* Adjust font size */
+    }
+  }
+  button {
+    padding: 15px 25px;
+    border: unset;
+    
+    color: black;
+    z-index: 1;
+    background:#0aff9d;
+    position: relative;
+    font-weight: 1000;
+    font-size: 17px;
+   
+   
+    transition: all 250ms;
+    overflow: hidden;
+   }
+   
+   button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+   color: #0aff9d;
+    background-color: #ffffff;
+    z-index: -1;
+  
+  
+    transition: all 250ms
+   }
+   
+   button:hover {
+    color: black  ;
+   }
+   
+   button:hover::before {
+    width: 100%;
+   }
+  /* Responsive styles for smaller screens */
+  @media (max-width: 480px) {
+    .text p {
+      font-size: 40px; /* Adjust font size for smaller screens */
+      line-height: 50px;
+      letter-spacing: -1px;
+      margin-bottom: 15px;
+    }
+  
+    .button button {
+      width: 140px; /* Further adjust button width */
+      font-size: 14px; /* Further adjust font size */
+    }
+  }
+  

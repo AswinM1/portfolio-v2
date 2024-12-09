@@ -1,0 +1,135 @@
+/* Main projects container */
+#projects {
+    padding: 60px 20px;
+    background-color: #111;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Styling for the heading */
+  #projects h1 {
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 90px;
+    letter-spacing: -5px;
+    font-weight: 700;
+    color: #0aff9d;
+    margin-bottom: 40px;
+  }
+  
+  /* Wrapper for project cards */
+  .projects-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 10px;
+    flex-direction: row;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+  
+  /* Project card style */
+  .card {
+    padding: 20px;
+    border-radius: 8px;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    width: 450px;
+    height: 450px;
+    border: solid black;
+    position: relative;
+    background-color: #222;
+  }
+  
+  /* Image styling */
+  .project-image {
+    width: 100%;
+    height: 200px; /* Fixed height for the image */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  /* Hover effect for project card */
+  .card:hover {
+    transform: scale(1.05);
+    border: 2px solid #0aff9d;
+    box-shadow: 0 8px 12px rgba(0, 255, 157, 0.3);
+  }
+  
+  /* Tech stack styling */
+  .tech-stack {
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  /* Styling for individual tech stack items */
+  .tech {
+    background-color: #0aff9d;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    color: black;
+  }
+  
+  /* Optional: Add hover effect to link text */
+  .aaa:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+  }
+  
+  /* Responsive Design */
+  
+  /* For smaller screens */
+  @media (max-width: 768px) {
+    #projects h1 {
+      font-size: 60px;
+  
+       /* Adjust font size for mobile */
+    }
+   
+  
+    .projects-wrapper {
+     gap:50px ;/* Smaller gap between cards */
+      padding:auto;
+      font-size: 20px; 
+      align-items: center;
+      justify-content: center;
+    }
+  
+    .card {
+      width: auto; /* Card takes full width on smaller screens */
+      height: auto;
+      justify-content: center;
+      align-items: center;
+      padding: auto;
+      /* Auto height to fit content */
+    }
+  
+    .tech-stack {
+     /* Stack tech stack items vertically on small screens */
+      gap: 10px;
+      width: 90px;
+      align-self:center;
+      align-items: center;
+      margin-left: 170px;
+    }
+  }
+  
+  /* For even smaller screens (mobile) */
+  @media (max-width: 480px) {
+    #projects h1 {
+      font-size: 50px; /* Even smaller font size for small mobile screens */
+    }
+  
+    .projects-wrapper {
+      flex-direction: column; /* Stack cards vertically */
+      gap: 1rem;
+    }
+  }
+  
