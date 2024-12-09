@@ -10,7 +10,7 @@ function Project() {
   const projects = [
     {
       name: 'Portfolio v2 ',
-      link: 'https://aswin-portfolio-nv03mjigb-aswins-projects-767d9255.vercel.app/',
+      link: 'https://portfolio-ver2-nine.vercel.app/',
       description: 'A personal portfolio showcasing my projects and skills.',
       techStack: ['React', 'Css', 'framer-motion', 'frontend'],
       image: pv2,
