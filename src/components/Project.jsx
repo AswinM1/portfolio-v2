@@ -5,6 +5,7 @@ import { useInView } from 'framer-motion'; // To detect when the component is in
 import pv2 from '../assets/images/p2.png';
 import pv1 from '../assets/images/p1.png';
 import pv3 from '../assets/images/ecom.png';
+import pv4 from '../assets/images/p4.png';
 
 function Project() {
   const projects = [
@@ -23,19 +24,13 @@ function Project() {
       image: pv3,
     },
     {
-      name: 'Portfolio v1',
-      link: 'https://aswin-portfolio-lilac.vercel.app/',
-      description: 'A simple HTML website for a local business.',
-      techStack: ['react-js', 'CSS', 'frontend'],
-      image: pv1,
+      name: 'JobMailer.IO',
+      link: 'https://jobmailer-final-rymv.vercel.app',
+      description: 'Ai driver proffessional mail generator.',
+      techStack: ['react-js', 'GROQ AI', 'fullstack'],
+      image: pv4,
     },
-    {
-      name: 'UI Library',
-      link: 'https://example.com/css-animations',
-      description: 'ui component library made with tailwind and framer motion',
-      techStack: ['tailwind', 'react', 'framer-motion'],
-      image: pv1,
-    },
+    
   ];
 
   return (
