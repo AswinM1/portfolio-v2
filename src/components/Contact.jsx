@@ -16,9 +16,9 @@ function Contact() {
             <motion.div
                 className="results-container"
                 initial={{ opacity: 0, y: 50 }} // Start invisible and slide from below
-                whileInView={{ opacity: 1, y: 0 }} // End fully visible at normal position
+                whileInView={{ opacity: 1, y: 0,once:true }} // End fully visible at normal position
                 transition={{ duration: 0.6 }} // Animation duration
-                viewport={{  amount: 0.5 }} // Trigger animation when 50% of the element is visible
+                viewport={{  amount: 0.5, }} // Trigger animation when 50% of the element is visible
             >
                 <h1>Let's Connect</h1>
                 <p>Shoot me an email if you want to connect! You can also find me on LinkedIn or GitHub.</p>
@@ -33,7 +33,7 @@ function Contact() {
                             rel="noopener noreferrer"
                             className="social-link"
                             initial={{ opacity: 0, scale: 0.8 }} // Start slightly smaller and invisible
-                            whileInView={{ opacity: 1, scale: 1 }} // End normal size and fully visible
+                            whileInView={{ opacity: 1, scale: 1,once:true }} // End normal size and fully visible
                             transition={{ duration: 0.5, delay: index * 0.2 }} // Stagger animation for each icon
                         >
                             {social.logo}

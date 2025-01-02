@@ -1,168 +1,130 @@
-/* About.css */
-
-/* Container for both sections */
+/* General container styling */
 .about-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 20px;
-    background-color: #111;
-    font-family: 'Poppins', sans-serif;
-    max-width: 1200px;
-    color: white;
-    gap: 10px;
-   
-   
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  background-color: #111;
+  font-family: 'Poppins', sans-serif;
+  max-width: 1200px;
+  color: white;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+/* Left section (About Me) */
+.leftSection {
+  flex: 1;
+  padding-right: 40px;
+}
+
+/* Right section (Tech Stack) */
+.rightSection {
+  flex: 1;
+  background-color: #0aff9d;
+  padding: 10px;
+  border-radius: 10px;
+  height: auto;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Main heading */
+.heading {
+  font-size: 70px;
+  color: #0aff9d;
+  margin-bottom: 2rem;
+  letter-spacing: -5px;
+  text-align: center;
+}
+
+/* Subheading (Tech Stack) */
+.subHeading {
+  font-size: 72px;
+  color: black;
+  margin-bottom: 1rem;
+  text-align: center;
+  margin-top: -30px;
+  letter-spacing: -5px;
+}
+
+/* Paragraphs */
+.paragraph {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  font-family: sans-serif;
+  text-align: justify;
+}
+
+/* Tech stack container */
+.techStackContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+/* Tech stack items */
+.techStackItem {
+  background-color: black;
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 10px;
+  font-size: 1rem;
+}
+
+/* Responsive styling for desktop */
+@media (min-width: 1024px) {
+  .about-container {
+      max-width: 1200px;
+      padding: 40px;
   }
-  
-  /* Left section (About Me) */
+
   .leftSection {
-    flex: 1;
-    padding-right: 40px;
-    height: 100px;
-    
+      padding-right: 50px;
   }
-  
-  /* Right section (Tech Stack) */
-  .rightSection {
-    flex: 1;
-    background-color: #0aff9d;
-    padding: 10px;
-    border-radius: 10px;
-    height: 400px;
-    color: black;
-    justify-content: center;
-  }
-  
-  /* Main heading */
+
   .heading {
-    font-size: 72px;
-    color: #0aff9d;
-    margin-bottom: 2rem;
-    letter-spacing: -5px;
-    text-align: center;
+      font-size: 80px;
   }
-  
-  /* Subheading (Tech Stack) */
+
   .subHeading {
-    font-size: 72px;
-    color: black;
-    margin-bottom: 1rem;
-    text-align: center;
-    margin-top: -30px;
-    padding: 50px;
-    margin: 0 auto;
-    letter-spacing: -5px;
+      font-size: 75px;
   }
-  
-  /* Paragraphs */
+
   .paragraph {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    font-family: sans-serif;
+      font-size: 1.4rem;
   }
-  
-  /* Container for the tech stack items */
+
   .techStackContainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-    max-width: 300px;
-    margin: 0 auto;
+      gap: 15px;
   }
-  
-  /* Individual tech stack item */
+}
+
+/* Responsive styling for medium desktops */
+@media (min-width: 1366px) {
+  .about-container {
+      max-width: 1400px;
+  }
+
+  .heading {
+      font-size: 90px;
+  }
+
+  .subHeading {
+      font-size: 85px;
+  }
+
+  .paragraph {
+      font-size: 1.6rem;
+  }
+
   .techStackItem {
-    background-color: black;
-    color: #fff;
-    padding: 4px;
-    border-radius: 10px;
-    font-size: 1rem;
+      font-size: 1.2rem;
   }
-  
-  @media (max-width: 768px) {
-    .about-container {
-      flex-direction: column;
-  
-      margin-left: 0;
-       /* Stack content vertically on smaller screens */
-  
-    
-    }
-   
-    .leftSection{
-        padding: 20px;
-
-    }
-   
-    .rightSection {
-      margin-top: 1px;
-      width: 730px; /* Full width for smaller screens */
-      height: auto; 
-      padding: 20px;/* Adjust height on smaller screens */
-    }
-    .heading {
-      font-size: 90px; /* Slightly smaller font for heading */
-    }
-    .subHeading {
-      font-size: 70px; /* Smaller subheading size */
-    }
-    .paragraph
-    {
-      width: 700px;
-      height: 150px;
-      
-    }
-  }
-  @media (max-width: 488px) {
-    .about-container {
-      flex-direction: column;
-  
- 
-       /* Stack content vertically on smaller screens */
-  
-    
-    }
-   
-    .leftSection{
-        padding: 10px;
-      
-        width: 350px;
-        height: auto;
-        margin-bottom: 60px;
-       
-        
-      
-    }
-   .paragraph
-   {
-    width:  300px;
-    margin: 0 auto;
-    font-size: 20px;
-    height: 300px;
-    
-   }
-    .rightSection {
-      margin-top: 30px;
-      width: 350px; /* Full width for smaller screens */
-      height: auto; 
-     
-
-    /* Adjust height on smaller screens */
-    }
-    .heading {
-      font-size: 50px;
-    
-      margin-right: 50px;
-       /* Slightly smaller font for heading */
-    }
-    .subHeading {
-      font-size: 50px;
-       /* Smaller subheading size */
-    }
-  }
-  
- 
-  
- 
+}

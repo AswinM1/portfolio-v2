@@ -4,14 +4,14 @@ import { motion } from 'framer-motion'; // Import motion from Framer Motion
 
 function About() {
   return (
-    <div className="about-container" id='about'>
+    <div className="about-container" id='about' >
       {/* Left Section: About Me */}
       <motion.div
         className="leftSection"
         initial={{ opacity: 0, x: -50 }} // Initial position: invisible and slightly left
         whileInView={{ opacity: 1, x: 0 }} // End position: fully visible and at normal position
         transition={{ duration: 0.6 }} // Animation duration
-        viewport={{  amount: 0.5 }} // Trigger animation when 50% of the element is visible
+        viewport={{  amount: 0.5,once:true }} // Trigger animation when 50% of the element is visible
       >
         <h1 className="heading">About</h1>
         <p className="paragraph">

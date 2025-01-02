@@ -4,7 +4,7 @@ import { motion } from 'framer-motion'; // Import motion from Framer Motion
 
 function Home() {
   return (
-    <div className="hello" id="home">
+    <div className="hello" id="home" >
       <div className="content-wrapper">
         {/* Text Content with Animation */}
         <motion.div
@@ -15,7 +15,7 @@ function Home() {
             duration: 1.2,
             ease: 'easeOut', // Smooth easing for a natural transition
           }}
-          viewport={{ once: false, amount: 0.5 }} // Trigger each time it enters the viewport
+          viewport={{  amount: 0.5,once:true }} // Trigger each time it enters the viewport
         >
           <p>
             <span style={{ backgroundColor: '#0aff9d', color: 'black', borderRadius: '20px' }}>Aswin</span>, Web Developer
@@ -33,7 +33,7 @@ function Home() {
             delay: 1.5, // Add delay to the button's appearance
             ease: 'easeInOut', // Smooth easing for the button
           }}
-          viewport={{ once: false, amount: 0.5 }} // Trigger each time it enters the viewport
+          viewport={{ amount: 0.5,once:true }} // Trigger each time it enters the viewport
         >
           <button
             onClick={() => (window.location.href = '/contact')} // Button redirects to the Contact Us page

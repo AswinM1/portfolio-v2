@@ -3,11 +3,26 @@ import './Project.css';
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion'; // To detect when the component is in view
 import pv2 from '../assets/images/p2.png';
-import pv1 from '../assets/images/p1.png';
+import pv1 from '../assets/images/sa.png';
 import pv3 from '../assets/images/ecom.png';
+import pv4 from '../assets/images/pe.png';
 
 function Project() {
   const projects = [
+    {
+      name: 'Job Mailer',
+      link: 'https://jobmailer-io.vercel.app/',
+      description: 'Ai powered job mail generator',
+      techStack: ['tailwind', 'reactJs', 'AI','full stack'],
+      image: pv4,
+    },
+    {
+      name: 'snap talk analyser',
+      link: 'https://snap-talk-wine.vercel.app/',
+      description: 'a ai powered snap talk analyser',
+      techStack: ['reactJs', 'Tailwind', 'fullstack','ai'],
+      image: pv1,
+    },
     {
       name: 'Portfolio v2 ',
       link: 'https://aswin-portfolio-nv03mjigb-aswins-projects-767d9255.vercel.app/',
@@ -22,20 +37,6 @@ function Project() {
       techStack: ['Reactjs', 'Mongo-DB', 'Express.js', 'fullstack'],
       image: pv3,
     },
-    {
-      name: 'Portfolio v1',
-      link: 'https://aswin-portfolio-lilac.vercel.app/',
-      description: 'A simple HTML website for a local business.',
-      techStack: ['react-js', 'CSS', 'frontend'],
-      image: pv1,
-    },
-    {
-      name: 'UI Library',
-      link: 'https://example.com/css-animations',
-      description: 'ui component library made with tailwind and framer motion',
-      techStack: ['tailwind', 'react', 'framer-motion'],
-      image: pv1,
-    },
   ];
 
   return (
@@ -48,7 +49,7 @@ function Project() {
             className="card"
             onClick={() => window.open(project.link, '_blank')}
             initial={{ opacity: 0, y: 50 }} // Start position: invisible and offset down
-            whileInView={{ opacity: 1, y: 0 }} // End position: visible and at normal position
+            whileInView={{ opacity: 1, y: 0,once:true }} // End position: visible and at normal position
             transition={{ duration: 0.5 }} // Animation duration
             viewport={{ amount: 0.5 }} // Trigger the animation when 50% of the element is visible
           >

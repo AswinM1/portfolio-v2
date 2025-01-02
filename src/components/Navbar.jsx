@@ -14,10 +14,10 @@ const Navbar = () => {
     <nav>
       <div className="logo">MyPortfolio</div>
       <div className="social-icons">
-        <a href="https://twitter.com" target="_blank" aria-label="Twitter"><FaTwitter /></a>
+     
         <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><FaLinkedin /></a>
         <a href="https://github.com" target="_blank" aria-label="Github"><FaGithub /></a>
-        <a href="https://instagram.com" target="_blank" aria-label="Instagram"><FaInstagram /></a>
+       
       </div>
       
       <div className={`menu ${isMobileMenuOpen ? 'active' : ''}`}>
