@@ -88,7 +88,7 @@
   /* For smaller screens */
   @media (max-width: 768px) {
     #projects h1 {
-      font-size: 60px;
+      font-size: 90px;
   
        /* Adjust font size for mobile */
     }
@@ -103,7 +103,6 @@
     }
   
     .card {
-      width: auto; /* Card takes full width on smaller screens */
       height: auto;
       justify-content: center;
       align-items: center;
@@ -118,18 +117,40 @@
       align-self:center;
       align-items: center;
       margin-left: 170px;
+      margin: 0 auto;
     }
   }
   
   /* For even smaller screens (mobile) */
   @media (max-width: 480px) {
     #projects h1 {
-      font-size: 50px; /* Even smaller font size for small mobile screens */
+      font-size: 50px;
+      margin-right: 40px; /* Even smaller font size for small mobile screens */
     }
   
     .projects-wrapper {
-      flex-direction: column; /* Stack cards vertically */
-      gap: 1rem;
+      flex-direction : column; /* Stack cards vertically */
+ 
+    
+      
     }
+    .tech-stack
+    {
+     margin: 0 auto;
+     padding: 10px;
+    }
+    .card-content
+    {
+      padding: 10px;
+    }
+    .card
+    {
+      margin: 0 auto;
+      padding: auto;
+      width: 330px;
+      height: auto;
+    }
+  
+    
   }
   

@@ -97,15 +97,30 @@
   /* Responsive styles for smaller screens */
   @media (max-width: 480px) {
     .text p {
-      font-size: 40px; /* Adjust font size for smaller screens */
+      font-size: 30px; /* Adjust font size for smaller screens */
       line-height: 50px;
       letter-spacing: -1px;
       margin-bottom: 15px;
+      
+      margin: 0 auto;
+     
+    
+    }
+    .content-wrapper
+    {
+      margin: 0 auto;
+      padding-right: 10px;
     }
   
     .button button {
-      width: 140px; /* Further adjust button width */
-      font-size: 14px; /* Further adjust font size */
+      width: 100px; /* Further adjust button width */
+      font-size: 10px;
+     /* Further adjust font size */
+    }
+    body{
+      overflow-x: hidden;
+    
+   
     }
   }
   

@@ -18,10 +18,8 @@ function About() {
           Hello! I am Aswin, a passionate developer who enjoys solving problems and building impactful projects. 
           My journey in the tech world has been filled with curiosity and learning, and I love working on creative 
           solutions to challenging problems.
-        </p>
-        <p className="paragraph">
           Outside of coding, I enjoy exploring new technologies, sharing knowledge, and continuously growing my skill set.
-        </p>
+          </p>
       </motion.div>
 
       {/* Right Section: Tech Stacks */}
@@ -30,7 +28,7 @@ function About() {
         initial={{ opacity: 0, x: 50 }} // Initial position: invisible and slightly right
         whileInView={{ opacity: 1, x: 0 }} // End position: fully visible and at normal position
         transition={{ duration: 0.6 }} // Animation duration
-        viewport={{  amount: 0.5 }} // Trigger animation when 50% of the element is visible
+        viewport={{  amount: 0.5,once:true }} // Trigger animation when 50% of the element is visible
       >
         <h2 className="subHeading">Tech Stacks</h2>
         <div className="techStackContainer">

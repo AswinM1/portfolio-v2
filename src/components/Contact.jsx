@@ -24,7 +24,7 @@ function Contact() {
                 <p>Shoot me an email if you want to connect! You can also find me on LinkedIn or GitHub.</p>
 
                 <div className="socials-container">
-                    {/* Socials Icon Animation */}
+                  
                     {socials.map((social, index) => (
                         <motion.a
                             key={index}
