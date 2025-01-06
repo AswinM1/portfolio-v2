@@ -5,7 +5,7 @@ import { useInView } from 'framer-motion'; // To detect when the component is in
 import pv2 from '../assets/images/p2.png';
 import pv1 from '../assets/images/sa.png';
 import pv3 from '../assets/images/ecom.png';
-import pv4 from '../assets/images/pe.png';
+import pv5 from '../assets/images/pv5.png';
 
 function Project() {
   const projects = [
