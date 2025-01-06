@@ -31,9 +31,9 @@ function Project() {
       image: pv2,
     },
     {
-      name: 'Constellations-Ecommerce',
-      link: 'https://constellation-ecommerce.vercel.app/',
-      description: 'A Ecommerce full stack application made with react and tailwind css supports crud operations',
+      name: 'Url shortner',
+      link: 'https://url-shortner-nine-kappa.vercel.app/',
+      description: 'A url shortner with analytics and clerk authentication,full stack application made with react and tailwind css supports crud operations',
       techStack: ['Reactjs', 'Mongo-DB', 'Express.js', 'fullstack'],
       image: pv3,
     },
