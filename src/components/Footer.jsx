@@ -1,24 +1,44 @@
-import React from 'react';
-import './Footer.css';
+import { Book, BookA, Twitter, X } from 'lucide-react'
+import React from 'react'
+import { BsTwitterX, } from 'react-icons/bs'
+import { FaGit, FaGithub } from 'react-icons/fa'
+import { Link } from 'react-router-dom'
+import { useTheme } from './Context'
+import { Sun,Moon } from 'lucide-react'
 
 function Footer() {
+  const{toggleDarkMode,darkMode}=useTheme()
   return (
-    <div id="footer">
-      <div className="footer-content">
-        <div className="social-links">
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-link">Twitter</a>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="social-link">GitHub</a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link">LinkedIn</a>
-        </div>
-        <div className="navigation-links">
-          <a href="#home" className="nav-link">Home</a>
-          <a href="#about" className="nav-link">About</a>
-          <a href="#projects" className="nav-link">Projects</a>
-          <a href="#experience" className="nav-link">Experience</a>
-        </div>
+    <div className=' pb-28 border-t border-dotted w-full text-black bg-white dark:bg-neutral-900 dark:text-white'>
+      <div className='flex justify-center items-center gap-4 py-4'>
+      
+        
+      <a href='https://leetcode.com/u/ASWIN__M/' className='cursor-pointer'>
+        <p>Leetcode</p>
+        </a>
+      <a href='https://www.geeksforgeeks.org/user/aswin_m1/' className='cursor-pointer'>
+        <p>GFG</p>
+        </a>
+       
+       <a href="https://github.com/AswinM1">
+            <FaGithub size={20} className='cursor-pointer'></FaGithub>
+            </a>
+            <a href="https://x.com/__pseudocode__">
+         <BsTwitterX className='cursor-pointer'/ >
+         </a>
+        
+        
+        <button
+          onClick={toggleDarkMode}
+          title="Toggle Theme"
+          className={`rounded-lg transition  
+            ${darkMode ? 'bg-neutral-900 text-white' : 'bg-white text-black'}`}
+        >
+          {darkMode ? <Sun size={18} /> : <Moon size={18} />}
+        </button>
       </div>
     </div>
-  );
+  )
 }
 
-export default Footer;
+export default Footer

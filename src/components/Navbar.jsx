@@ -1,41 +1,55 @@
-import React, { useState } from 'react';
-import './Navbar.css';  // Import the external CSS file
-import { Link } from 'react-scroll';  // Import Link component from react-scroll
-import { FaTwitter, FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa'; // Import social media icons
+import {
+  Home, Book, Moon, Sun
+} from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { useTheme } from './Context';
+import { LiaLinkedin } from 'react-icons/lia';
+import { BsGithub, BsLinkedin, BsTwitterX } from 'react-icons/bs';
+import { MdEmail } from 'react-icons/md';
 
 const Navbar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const { darkMode, toggleDarkMode } = useTheme();
 
-  const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
+  const navItems = [
+    { type: 'link', to: '/', title: 'Home', icon: <Home size={28} /> },
+    { type: 'link', to: '/blogs', title: 'Blogs', icon: <Book size={28} /> },
+    { type: 'external', href:'https://linkedin.com/in/aswinmfullstack', title: 'LinkedIn', icon: <BsLinkedin size={26} /> },
+    { type: 'external', href: 'https://github.com/AswinM1', title: 'GitHub', icon: <BsGithub size={26} /> },
+    { type: 'external', href: 'https://twitter.com', title: 'Twitter', icon: <BsTwitterX size={22} /> },
+    { type: 'external', href: 'mailto:aswinheria@gmail.com', title: 'Email', icon: <MdEmail size={26} /> },
+    // { type: 'external', href: 'https://leetcode.com/AswinM1/', title: 'LeetCode', icon: <img src="https://leetcode.com/favicon.ico" alt="LeetCode" className="w-7 h-7 bg-white" /> },
+    // { type: 'external', href: 'https://www.geeksforgeeks.org/user/aswin_m1/', title: 'GeeksforGeeks', icon: <img src="https://media.geeksforgeeks.org/wp-content/cdn-uploads/gfg_200X200.png" alt="GFG" className="w-6 h-6" /> },
+  ];
 
   return (
-    <nav>
-      <div className="logo">MyPortfolio</div>
-      <div className="social-icons">
-     
-        <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn"><FaLinkedin /></a>
-        <a href="https://github.com" target="_blank" aria-label="Github"><FaGithub /></a>
-       
-      </div>
-      
-      <div className={`menu ${isMobileMenuOpen ? 'active' : ''}`}>
-        <Link to="home" smooth={true} duration={500} className="menu-item">Home</Link>
-        <Link to="about" smooth={true} duration={500} className="menu-item">About</Link>
-        <Link to="projects" smooth={true} duration={500} className="menu-item">Projects</Link>
-        <Link to="contact" smooth={true} duration={500} className="menu-item">Contact</Link>
-        <a href="/resume.pdf" className="resume-button" target="_blank" download>
-          My  Resume
-        </a>
-      </div>
-      
+    <nav className="fixed bottom-6 inset-x-0 z-50 flex justify-center">
 
-      {/* Hamburger Menu */}
-      <div className="hamburger-icon" onClick={toggleMobileMenu}>
-        <div></div>
-        <div></div>
-        <div></div>
+      <div
+        className={`flex items-end justify-center gap-6 px-3 py-2 rounded-lg shadow-xl backdrop-blur-md border w-fit
+        transition-all duration-300
+        ${darkMode ? 'bg-neutral-900/70 border-neutral-700 text-white' : 'bg-white/70 border-gray-300 text-black'}`}
+      >
+        {navItems.map((item, index) =>
+         (
+          (item.type==='link'?(
+            <Link to={item.to} title={item.title} key={index} className="hover:scale-150 text-black dark:text-white transition-all duration-150  rounded-lg  ">
+              {item.icon}
+            </Link>
+          ) :(
+            <a href={item.href} className='hover:scale-150 text-black dark:text-white transition-all duration-150  rounded-lg '>
+              {item.icon}
+            </a>
+          )
+          
+        )))}
+  <button
+          onClick={toggleDarkMode}
+          title="Toggle Theme"
+          className={`rounded-lg transition  
+            ${darkMode ? ' text-white' : ' text-black'}`}
+        >
+          {darkMode ? <Sun size={27} /> : <Moon size={27} />}
+        </button>
       </div>
     </nav>
   );

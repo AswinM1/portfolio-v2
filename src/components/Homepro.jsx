@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 import { Link } from "react-router-dom"; // Required if using React Router
 
-const Projects = () => {
+const Homepro = () => {
   const parent = {
     initial: { opacity: 0 },
     animate: {
@@ -37,33 +37,17 @@ const Projects = () => {
     {
       name: "ShortURL",
       description: "A URL shortener made with nanoid, with an admin dashboard to track clicks and views.",
-      techStack: ["React", "MongoDB", "nanoid"],
+      techStack: ["React", "Express.js", "Full stack"],
       link: "https://url-shortner-nine-kappa.vercel.app/",
     },
-    {
-      name: "Constellations",
-      description: "An eCommerce website made using the MERN stack and Clerk.",
-      techStack: ["MongoDB", "Express", "React"],
-      link: "https://constellation-ecommerce.vercel.app/",
-    },
-    {
-      name: "Eden",
-      description: "An Mordern component library with reusable nextjs components",
-      techStack: ["Next.js", "Tailwind", "motion"],
-      link: "https://constellation-ecommerce.vercel.app/",
-    },
+   ,
     {
       name: "RetrO ui",
-      description: "Retro themed component library made with nextj.s",
-      techStack: ["Next.js", "Tailwind", "motion"],
+      description: "Retro themed component library made with nextjs and tailwind css",
+      techStack: ["Next.js", "Tailwind", "Motion"],
       link: "https://retro0.vercel.app/",
     },
-    {
-      name: "Bloggify",
-      description: "A anonymous blogging app",
-      techStack: ["Next.js", "mongoDB", "JWT"],
-      link: "https://blogifyy-00.vercel.app/",
-    },
+    
   ];
 
   return (
@@ -74,12 +58,25 @@ const Projects = () => {
       initial="initial"
       animate="animate"
     >
-      <motion.h2
-        className="text-3xl mb-5 text-black dark:text-white font-semibold tracking-tight font-sans"
-        variants={child}
-      >
-        Projects
-      </motion.h2>
+      <motion.div
+  className="mt-10 mb-5 flex items-center justify-between"
+  variants={child}
+>
+  <motion.h2
+    className="text-3xl text-black dark:text-white font-semibold tracking-tighter font-sans"
+    variants={child}
+  >
+    Projects
+  </motion.h2>
+
+  <Link
+    to="/projects"
+    className="text-black dark:text-gray-400 font-semibold rounded-full transition hover:scale-105"
+  >
+    More
+  </Link>
+</motion.div>
+
       <motion.p
         className="font-sans text-lg  text-neutral-800 dark:text-gray-400 mb-6 tracking-tight"
         variants={child}
@@ -93,15 +90,7 @@ const Projects = () => {
         ))}
       </div>
 
-      {/* See More Button */}
-      <motion.div className="mt-10 text-center" variants={child}>
-        {/* <Link
-          to="/projects"
-          className="inline-block px-6 py-3 bg-black dark:bg-white text-white dark:text-black font-semibold rounded-full transition hover:scale-105"
-        >
-          See More Projects →
-        </Link> */}
-      </motion.div>
+     
     </motion.section>
   );
 };
@@ -131,23 +120,22 @@ const SpotlightCard = ({ project, variants }) => {
       <div
         className="pointer-events-none absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
         style={{
-          background: `radial-gradient(circle at var(--x) var(--y),	rgba(253,159,174,0.8), transparent 90%)`,
-          
+          background: `radial-gradient(circle at var(--x) var(--y), rgba(0, 123, 255, 0.6), transparent 50%)`,
         }}
       />
 
       <div className="relative z-10">
-        <h3 className="text-lg font-sans tracking-tighter text-black dark:text-white font-bold mb-2">
+        <h3 className="text-lg font-sans tracking-tight text-black dark:text-white font-bold mb-2">
           {project.name}
         </h3>
-        <p className="text-black dark:text-neutral-300 mb-4">
+        <p className="font-sans text-md text-black dark:text-gray-400 mb-4">
           {project.description}
         </p>
         <div className="text-black dark:text-white flex flex-wrap gap-3">
           {project.techStack.map((tech, idx) => (
             <span
               key={idx}
-              className=" font-medium bg-neutral-700 dark:bg-neutral-600 text-sm text-neutral-300 dark:text-white py-1 px-2 rounded-lg"
+              className="font-medium bg-black text-white dark:bg-neutral-700 text-black text-sm  dark:text-white py-1 px-2 rounded-lg"
             >
               {tech}
             </span>
@@ -158,4 +146,4 @@ const SpotlightCard = ({ project, variants }) => {
   );
 };
 
-export default Projects;
+export default Homepro;

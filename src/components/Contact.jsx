@@ -1,55 +1,116 @@
-import React from 'react';
-import './Contact.css';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa'; // Import React Icons
-import { motion } from 'framer-motion'; // Import Framer Motion
+import React, { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Contact() {
-    const socials = [
-        { name: 'GitHub', logo: <FaGithub size={40} />, link: 'https://github.com/AswinM1' },
-        { name: 'LinkedIn', logo: <FaLinkedin size={40} />, link: 'https://www.linkedin.com/in/aswin-m-22073a258/' },
-        { name: 'Email', logo: <FaEnvelope size={40} />, link: 'mailto:aswinheri@example.com' }, // Email link
-    ];
+  const [form, setForm] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: '',
+  });
 
-    return (
-        <div className="results" id="contact">
-            {/* Section Animation */}
-            <motion.div
-                className="results-container"
-                initial={{ opacity: 0, y: 50 }} // Start invisible and slide from below
-                whileInView={{ opacity: 1, y: 0,once:true }} // End fully visible at normal position
-                transition={{ duration: 0.6 }} // Animation duration
-                viewport={{  amount: 0.5, }} // Trigger animation when 50% of the element is visible
-            >
-                <h1>Let's Connect</h1>
-                <p>Shoot me an email if you want to connect! You can also find me on LinkedIn or GitHub.</p>
+  const handleChange = (e) => {
+    setForm((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
 
-                <div className="socials-container">
-                  
-                    {socials.map((social, index) => (
-                        <motion.a
-                            key={index}
-                            href={social.link}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="social-link"
-                            initial={{ opacity: 0, scale: 0.8 }} // Start slightly smaller and invisible
-                            whileInView={{ opacity: 1, scale: 1,once:true }} // End normal size and fully visible
-                            transition={{ duration: 0.5, delay: index * 0.2 }} // Stagger animation for each icon
-                        >
-                            {social.logo}
-                        </motion.a>
-                    ))}
-                </div>
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-                <div className="button-container">
-                    {/* Button to send mail */}
-                    <a href="mailto:your-email@example.com">
-                        <button className="send-email-btn">Send Email</button>
-                    </a>
-                </div>
-            </motion.div>
+    const { name, email, subject, message } = form;
+
+    if (!name || !email || !subject || !message) {
+      toast.error("Please fill in all fields.");
+      return;
+    }
+
+    // Simulate email sending
+    console.log(form);
+    toast.success("Message sent successfully!", {
+      position: "top-right",
+      autoClose: 3000,
+      theme: "light",
+    });
+
+    // Clear form
+    setForm({
+      name: '',
+      email: '',
+      subject: '',
+      message: '',
+    });
+  };
+
+  return (
+    <div className="p-6 max-w-xl mx-auto pb-24">
+      <h2 className="text-2xl font-bold mb-6">Contact Us</h2>
+      <form onSubmit={handleSubmit} className="space-y-4">
+        <div>
+          <label htmlFor="name" className="block text-sm font-semibold mb-1">Name</label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            value={form.name}
+            onChange={handleChange}
+            className="w-full border border-gray-400 rounded px-4 py-2"
+            placeholder="Your Name"
+          />
         </div>
-    );
+
+        <div>
+          <label htmlFor="email" className="block text-sm font-semibold mb-1">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={form.email}
+            onChange={handleChange}
+            className="w-full border border-gray-400 rounded px-4 py-2"
+            placeholder="your@email.com"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="subject" className="block text-sm font-semibold mb-1">Subject</label>
+          <input
+            type="text"
+            id="subject"
+            name="subject"
+            value={form.subject}
+            onChange={handleChange}
+            className="w-full border border-gray-400 rounded px-4 py-2"
+            placeholder="Subject"
+          />
+        </div>
+
+        <div>
+          <label htmlFor="message" className="block text-sm font-semibold mb-1">Message</label>
+          <textarea
+            id="message"
+            name="message"
+            value={form.message}
+            onChange={handleChange}
+            rows="5"
+            className="w-full border border-gray-400 rounded px-4 py-2"
+            placeholder="Your message here..."
+          ></textarea>
+        </div>
+
+        <button
+          type="submit"
+          className="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600"
+        >
+          Send Message
+        </button>
+      </form>
+
+      <ToastContainer />
+    </div>
+  );
 }
 
 export default Contact;
