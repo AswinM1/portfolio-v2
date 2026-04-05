@@ -1,0 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@layer components {
+  .dock-icon {
+    @apply transition-transform duration-200 ease-in-out hover:scale-125 transform origin-bottom;
+  }
+}
